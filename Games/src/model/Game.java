@@ -72,7 +72,23 @@ public class Game {
 	public int goalCount() {
 		return homeGoals + awayGoals;
 	}
-	
+
+	public boolean isHomeGame() {
+		return home.equals("FC Bayern Muenchen");
+	}
+
+
+	public Result getResult() {
+		if (homeGoals > awayGoals) {
+			return Result.WON;
+		} else if (homeGoals < awayGoals) {
+			return Result.LOST;
+		} else {
+			return Result.DRAW;
+		}
+	}
+
+
 	@Override
 	public String toString() {
 		return "Game{" +
